@@ -1,3 +1,4 @@
+const { toDate, parseISO } = require('date-fns');
 var isValid = require('date-fns/isValid');
 
 const isDate = (value) => {
@@ -5,7 +6,7 @@ const isDate = (value) => {
         return false;
     }
 
-    if (isValid(value)) {
+    if (isValid(parseISO(value))) {
         return true;
     } else {
         return false;
